@@ -1,0 +1,9 @@
+*{
+  box-sizing: border-box;
+}
+
+.BTC, .XRP, .LTC, .ETH{
+  width: 20%;
+  margin: 2% 2.5% 2% 2.5%;
+  float: left;
+}
