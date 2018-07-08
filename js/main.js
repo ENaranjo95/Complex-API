@@ -39,19 +39,16 @@ function options(usd){
   $.ajax({
     url: apiURL2,
     success: function(r){
-      // Takes the parameter usd and passes as an arguement
-      var btc = usd / r.data[1].quotes.USD.price // Converts your usd funds into the the value as Bitcoin
-      // Appends the value stored in btc to the html
-      $('.BTC').append('<span>' + btc + '</span>')
-      var xrp = usd / r.data[52].quotes.USD.price
-      // Appends the value stored in xrp to the html
-      $('.XRP').append('<span>' + xrp + '</span>')
-      var ltc = usd / r.data[2].quotes.USD.price
-      // Appends the value stored in ltc to the html
-      $('.LTC').append('<span>' + ltc + '</span>')
-      var eth = usd / r.data[1027].quotes.USD.price
-      // Appends the value stored in eth to the html
-      $('.ETH').append('<span>' + eth + '</span>')
+      console.log(r)
+      // var cc = $('#crypto').val()
+        // Converts your usd funds into the the value as Bitcoin and then displays in the DOM
+      $('#btc').html(usd / r.data[1].quotes.USD.price)
+        // Converts your usd funds into the the value as Ripple and then displays in the DOM
+      $('#xrp').html(usd / r.data[52].quotes.USD.price)
+        // Converts your usd funds into the the value as Litecoin and then displays in the DOM
+      $('#ltc').html(usd / r.data[2].quotes.USD.price)
+        // Converts your usd funds into the the value as Ethereum and then displays in the DOM
+      $('#eth').html(usd / r.data[1027].quotes.USD.price)
     },
     error: function(err){
       console.log(err)
